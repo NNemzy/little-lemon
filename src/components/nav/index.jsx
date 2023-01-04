@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./nav-styles.module.css";
+import { NavLink } from "react-router-dom";
 
 function Nav() {
   const navigationLinks = [
@@ -7,8 +8,8 @@ function Nav() {
     "About",
     "Menu",
     "Reservations",
-    "Order Online",
-    "Log In",
+    "Order",
+    // "Log In",
   ];
 
   const { navigation, logo, list } = styles;
@@ -19,9 +20,9 @@ function Nav() {
       <ul className={list}>
         {navigationLinks.map((link) => (
           <li key={link.toLowerCase()}>
-            <a className={styles.link} href="#">
+            <NavLink className={styles.link} to={link.toLocaleLowerCase()}>
               {link}
-            </a>
+            </NavLink>
           </li>
         ))}
       </ul>

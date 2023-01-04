@@ -1,5 +1,6 @@
 // import Nav from "./components/nav/nav";
 import styles from "./header-styles.module.css";
+import { NavLink } from "react-router-dom";
 import img from "./d3.jpeg";
 
 function Header() {
@@ -16,7 +17,9 @@ function Header() {
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s.
           </p>
-          <button>Reserve a Table</button>
+          <button>
+            <NavLink to="/reservations">Reserve a Table</NavLink>
+          </button>
         </div>
         <div className={imageContainer}>
           <img className={image} src={img} />

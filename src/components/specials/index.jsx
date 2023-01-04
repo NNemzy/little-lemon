@@ -3,6 +3,8 @@ import styles from "./specials-styles.module.css";
 import img1 from "./../../../src/assets/images/d1.jpeg";
 import img2 from "./../../../src/assets/images/d4.jpeg";
 
+import { NavLink } from "react-router-dom";
+
 function Specials() {
   const { title, container, special, text, section } = styles;
 
@@ -10,7 +12,9 @@ function Specials() {
     <section className={section}>
       <div className={title}>
         <h1>Specials</h1>
-        <button className="btn-primary">Online order</button>
+        <button className="btn-primary">
+          <NavLink to="/order">Online order</NavLink>
+        </button>
       </div>
       <div className={container}>
         <div className={special}>
