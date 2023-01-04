@@ -2,6 +2,7 @@
 import Nav from "./components/Nav/index";
 import Header from "./components/Header";
 import Specials from "./components/Specials";
+import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Nav />
       <Header />
       <Specials />
+      <Testimonials />
     </>
   );
 }
