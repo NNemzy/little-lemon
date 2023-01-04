@@ -1,0 +1,23 @@
+.logo {
+  color: var(--bg-color);
+}
+.list {
+  display: flex;
+  gap: 5px;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  padding: 10px 20px;
+  color: var(--bg-color);
+  border-radius: 5px;
+  transition: all 200ms ease;
+}
+.link:hover {
+  background-color: var(--bg-color);
+  color: white;
+}
