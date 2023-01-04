@@ -44,6 +44,7 @@ button:hover {
 .btn-primary {
   background-color: black;
   color: white;
+  font-weight: 600;
   border-radius: 5px;
   padding: 10px 20px;
   border: none;
