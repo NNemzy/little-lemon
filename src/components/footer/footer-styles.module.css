@@ -1,0 +1,39 @@
+.footer {
+  background-color: var(--bg-color);
+  padding: 100px 0;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+.imageContainer {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+.imageContainer img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+li {
+  padding: 2px 0;
+}
+h3 {
+  color: white;
+}
+a {
+  color: white;
+  transition: color 200ms ease;
+}
+a:hover {
+  color: var(--primary-yellow);
+}
+.navigation {
+}
+.contactLinks {
+}
+.socials {
+}
