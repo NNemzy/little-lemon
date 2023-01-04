@@ -1,3 +1,12 @@
+*,
+*::after,
+*::before {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  /* outline: 1px solid lime; */
+}
+
 :root {
   --bg-color: #495e57;
   --primary-yellow: #f4ce14;
@@ -24,7 +33,10 @@ a {
   color: black;
 }
 
-#root {
-  max-width: 1200px;
-  margin: 0 auto;
+button {
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+button:hover {
+  scale: 1.05;
 }

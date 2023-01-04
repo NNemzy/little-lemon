@@ -1,0 +1,53 @@
+.header {
+  width: 100%;
+  background-color: var(--bg-color);
+}
+.container {
+  width: 70%;
+  margin: auto auto;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.imageContainer {
+  width: 500px;
+  height: 400px;
+  overflow: hidden;
+}
+.text {
+  width: 400px;
+}
+.text h1 {
+  font-size: 64px;
+  color: var(--primary-yellow);
+}
+.text h2 {
+  color: white;
+}
+.text p {
+  margin-top: 50px;
+  color: white;
+}
+.text button {
+  background-color: black;
+  margin-top: 50px;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600px;
+}
+.image {
+  width: 100%;
+  object-position: center;
+  object-fit: contain;
+  border-radius: 16px;
+  transition: opacity 200ms ease;
+  cursor: pointer;
+}
+
+.image:hover {
+  opacity: 0.7;
+}
