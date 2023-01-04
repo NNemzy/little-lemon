@@ -1,0 +1,36 @@
+.section {
+  max-width: 85%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+.title h1 {
+  font-size: 2rem;
+}
+.text {
+  padding: 20px;
+}
+.text p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: rgb(63, 63, 63);
+}
+.container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.special {
+  background-color: rgb(234, 234, 234);
+  border-radius: 8px;
+  padding-bottom: 50px;
+  flex: 1 0 300px;
+}
+.special img {
+  width: 100%;
+  height: 200px;
+}

@@ -1,0 +1,11 @@
+.section {
+  background: var(--bg-color);
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.testimonials {
+  display: flex;
+  justify-content: space-between;
+}

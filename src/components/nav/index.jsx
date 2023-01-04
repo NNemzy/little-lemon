@@ -11,7 +11,7 @@ function Nav() {
     "Log In",
   ];
 
-  const { navigation, logo, list, link } = styles;
+  const { navigation, logo, list } = styles;
 
   return (
     <nav className={navigation}>
