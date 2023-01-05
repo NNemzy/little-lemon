@@ -22,7 +22,11 @@ function BookingForm(props) {
       </div>
       <div>
         <label htmlFor="res-time">Choose Time:</label>
-        <select id="res-time" value={time} onChange={handleInputChange("time")}>
+        <select
+          id="res-time"
+          value={time[0]}
+          onChange={handleInputChange("time")}
+        >
           {availableTimes.map((time) => (
             <option key={time}>{time}</option>
           ))}

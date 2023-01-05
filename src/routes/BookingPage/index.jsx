@@ -1,34 +1,20 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer, useState, useEffect } from "react";
 import BookingForm from "../../components/BookingForm";
+import { fetchAPI } from "./../../util/bookingApi/api";
+import { getRandomArbitraryTimes } from "./../../util/fun";
 
-const times = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-let types;
+const initTimes = ["17:00", "18:00", "19:00"];
 
 function reducer(state, action) {
   switch (action.type) {
     case "DATE_CHANGE":
-      return getRandomArbitraryTimes(13, 23);
+      return fetchAPI(new Date(action.payload));
       break;
   }
 }
 
 function initializeTimes() {
-  return times;
-}
-
-function getRandomArbitraryTimes(min, max) {
-  let times = new Set();
-
-  min = Math.ceil(min);
-  max = Math.floor(max);
-
-  while (times.size < 5) {
-    times.add(`${Math.floor(Math.random() * (max - min + 1)) + min}:00`);
-  }
-
-  return Array.from(times).sort(
-    (a, b) => Number(a.split(":")[0]) - Number(b.split(":")[0])
-  );
+  return initTimes;
 }
 
 function BookingPage() {
@@ -42,17 +28,20 @@ function BookingPage() {
 
   const [formValues, setFormValues] = useState({
     date: currentDate,
-    time: availableTimes[0],
+    time: availableTimes,
     guests: "1",
     occasion: "Birthday",
   });
 
+  useEffect(() => {
+    updateTimes(currentDate);
+  }, []);
+
   const handleInputChange = (name) => (event) => {
+    let inputValue = event.target.value;
     if (name === "date") {
-      console.log("here");
-      updateTimes();
+      updateTimes(inputValue);
     }
-    const inputValue = event.target.value;
     setFormValues({
       ...formValues,
       [name]: inputValue,
@@ -61,16 +50,12 @@ function BookingPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formValues);
   };
 
-  function updateTimes() {
-    dispatch({ type: "DATE_CHANGE" });
+  function updateTimes(data) {
+    dispatch({ type: "DATE_CHANGE", payload: data });
     return;
   }
-
-  getRandomArbitraryTimes(13, 23);
-  console.log("available ", availableTimes);
 
   return (
     <BookingForm
