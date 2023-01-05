@@ -1,51 +1,8 @@
 import React, { useState } from "react";
 import styles from "./bookingForm-styles.module.css";
 
-function AvailableTimes(props) {
-  const [availableTimes, setAvailableTimes] = useState([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]);
-
-  return (
-    <>
-      {availableTimes.map((time) => (
-        <option key={time}>{time}</option>
-      ))}
-    </>
-  );
-}
-
-function BookingForm() {
-  const currentDate = new Date()
-    .toLocaleDateString()
-    .split("/")
-    .reverse()
-    .join("-");
-
-  const [formValues, setFormValues] = useState({
-    date: currentDate,
-    time: "",
-    guests: "1",
-    occasion: "Birthday",
-  });
-
-  const handleInputChange = (name) => (event) => {
-    const inputValue = event.target.value;
-    setFormValues({
-      ...formValues,
-      [name]: inputValue,
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(formValues);
-  };
+function BookingForm(props) {
+  const { availableTimes, formValues, handleInputChange, handleSubmit } = props;
 
   const { date, time, guests, occasion } = formValues;
 
@@ -66,7 +23,9 @@ function BookingForm() {
       <div>
         <label htmlFor="res-time">Choose Time:</label>
         <select id="res-time" value={time} onChange={handleInputChange("time")}>
-          <AvailableTimes />
+          {availableTimes.map((time) => (
+            <option key={time}>{time}</option>
+          ))}
         </select>
       </div>
       <div>
