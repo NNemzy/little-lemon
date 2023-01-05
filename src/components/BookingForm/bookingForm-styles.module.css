@@ -2,12 +2,12 @@
   padding: 5px 0;
 }
 input {
+  margin: 5px;
+  padding: 5px;
   border-radius: 16px;
 }
 input:invalid {
   outline-offset: 1px;
-  outline: 2px solid red;
-  animation: show infinite ease 1s;
 }
 input[type="submit"] {
   padding: 10px 15px;

@@ -1,7 +1,8 @@
 import React, { useReducer, useState, useEffect } from "react";
 import BookingForm from "../../components/BookingForm";
-import { fetchAPI } from "./../../util/bookingApi/api";
+import { fetchAPI, submitAPI } from "./../../util/bookingApi/api";
 import { getRandomArbitraryTimes } from "./../../util/fun";
+import { useNavigate } from "react-router-dom";
 
 const initTimes = ["17:00", "18:00", "19:00"];
 
@@ -18,6 +19,7 @@ function initializeTimes() {
 }
 
 function BookingPage() {
+  const navigate = useNavigate();
   const currentDate = new Date()
     .toLocaleDateString()
     .split("/")
@@ -50,6 +52,8 @@ function BookingPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("confirmed booking");
+    submitAPI() && navigate("/booking-confirmed");
   };
 
   function updateTimes(data) {
