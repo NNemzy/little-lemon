@@ -1,2 +1,19 @@
-.bookingForm {
+.form div {
+  padding: 5px 0;
+}
+input {
+  border-radius: 16px;
+}
+input:invalid {
+  outline-offset: 1px;
+  outline: 2px solid red;
+  animation: show infinite ease 1s;
+}
+input[type="submit"] {
+  padding: 10px 15px;
+  background-color: black;
+  margin-top: 20px;
+  cursor: pointer;
+  color: white;
+  border: none;
 }

@@ -3,14 +3,7 @@ import styles from "./nav-styles.module.css";
 import { NavLink } from "react-router-dom";
 
 function Nav() {
-  const navigationLinks = [
-    "Home",
-    "About",
-    "Menu",
-    "Reservations",
-    "Order",
-    // "Log In",
-  ];
+  const navigationLinks = ["Home", "About", "Menu", "Booking", "Order"];
 
   const { navigation, logo, list } = styles;
 

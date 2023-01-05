@@ -1,13 +1,37 @@
 import React, { useState } from "react";
-import "./bookingForm-styles.module.css";
+import styles from "./bookingForm-styles.module.css";
+
+function AvailableTimes(props) {
+  const [availableTimes, setAvailableTimes] = useState([
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+    "21:00",
+    "22:00",
+  ]);
+
+  return (
+    <>
+      {availableTimes.map((time) => (
+        <option key={time}>{time}</option>
+      ))}
+    </>
+  );
+}
 
 function BookingForm() {
+  const currentDate = new Date()
+    .toLocaleDateString()
+    .split("/")
+    .reverse()
+    .join("-");
+
   const [formValues, setFormValues] = useState({
-    firstName: "",
-    lastNName: "",
-    email: "",
-    password: "",
-    request: "",
+    date: currentDate,
+    time: "",
+    guests: "1",
+    occasion: "Birthday",
   });
 
   const handleInputChange = (name) => (event) => {
@@ -23,31 +47,52 @@ function BookingForm() {
     console.log(formValues);
   };
 
+  const { date, time, guests, occasion } = formValues;
+
   return (
-    <form onSubmit={handleSubmit} className="bookingForm">
+    <form onSubmit={handleSubmit} className={styles.form}>
       <div>
-        <label htmlFor="firstName">First Name:</label>
-        <input id="firstName" onChange={handleInputChange("firstName")} />
+        <label htmlFor="res-date">Choose Date:</label>
+        <input
+          type="date"
+          id="res-date"
+          min="2023-01-06"
+          max="2023-02-06"
+          required
+          value={date}
+          onChange={handleInputChange("date")}
+        />
       </div>
       <div>
-        <label htmlFor="lastName">Last Name:</label>
-        <input id="lastName" onChange={handleInputChange("lastName")} />
+        <label htmlFor="res-time">Choose Time:</label>
+        <select id="res-time" value={time} onChange={handleInputChange("time")}>
+          <AvailableTimes />
+        </select>
       </div>
       <div>
-        <label htmlFor="email">Email:</label>
-        <input id="email" onChange={handleInputChange("email")} />
+        <label htmlFor="guest">Number of Guests: </label>
+        <input
+          type="number"
+          placeholder="1"
+          min="1"
+          max="10"
+          id="guests"
+          value={guests}
+          onChange={handleInputChange("guests")}
+        />
       </div>
+      <label htmlFor="occasion">Occasion: </label>
+      <select
+        id="occasion"
+        value={occasion}
+        onChange={handleInputChange("occasion")}
+      >
+        <option>Birthday</option>
+        <option>Anniversary</option>
+      </select>
       <div>
-        <label htmlFor="password">Password:</label>
-        <input id="password" onChange={handleInputChange("password")} />
+        <input type="submit" value="Make your reservation" />
       </div>
-      <div>
-        <label htmlFor="request">Special Request:</label>
-        <textarea id="request" onChange={handleInputChange("request")} />
-      </div>
-      <button className="btn-primary" type="submit">
-        Submit
-      </button>
     </form>
   );
 }

@@ -10,9 +10,10 @@ import ErrorPage from "./routes/ErrorPage";
 import HomePage from "./routes/HomePage";
 import AboutPage from "./routes/AboutPage";
 import MenuPage from "./routes/MenuPage";
-import ReservationsPage from "./routes/ReservationsPage";
+// import ReservationsPage from "./routes/ReservationsPage";
 import OrderPage from "./routes/OrderPage";
 import LoginPage from "./routes/LogInPage";
+import BookingPage from "./routes/BookingPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -35,8 +36,8 @@ const router = createBrowserRouter([
         element: <MenuPage />,
       },
       {
-        path: "/reservations",
-        element: <ReservationsPage />,
+        path: "/booking",
+        element: <BookingPage />,
       },
       {
         path: "/order",
