@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import styles from "./bookingForm-styles.module.css";
 
 function BookingForm(props) {
-  const { availableTimes, formValues, handleInputChange, handleSubmit } = props;
-
+  const {
+    availableTimes,
+    formValues,
+    handleInputChange,
+    disableForm,
+    handleSubmit,
+  } = props;
   const { date, time, guests, occasion } = formValues;
 
   return (
@@ -11,6 +16,7 @@ function BookingForm(props) {
       <div>
         <label htmlFor="res-date">Choose Date:</label>
         <input
+          disabled={disableForm}
           type="date"
           id="res-date"
           min="2023-01-06"
@@ -23,6 +29,7 @@ function BookingForm(props) {
       <div>
         <label htmlFor="res-time">Choose Time:</label>
         <select
+          disabled={disableForm}
           id="res-time"
           value={time[0]}
           onChange={handleInputChange("time")}
@@ -35,6 +42,7 @@ function BookingForm(props) {
       <div>
         <label htmlFor="guest">Number of Guests: </label>
         <input
+          disabled={disableForm}
           type="number"
           placeholder="1"
           min="1"
@@ -46,6 +54,7 @@ function BookingForm(props) {
       </div>
       <label htmlFor="occasion">Occasion: </label>
       <select
+        disabled={disableForm}
         id="occasion"
         value={occasion}
         onChange={handleInputChange("occasion")}
@@ -54,7 +63,12 @@ function BookingForm(props) {
         <option>Anniversary</option>
       </select>
       <div>
-        <input type="submit" value="Make your reservation" />
+        <input
+          style={disableForm ? { backgroundColor: "gray" } : null}
+          disabled={disableForm}
+          type="submit"
+          value="Make your reservation"
+        />
       </div>
     </form>
   );

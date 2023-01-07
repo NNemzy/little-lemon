@@ -15,6 +15,11 @@ import OrderPage from "./routes/OrderPage";
 import LoginPage from "./routes/LogInPage";
 import BookingPage from "./routes/BookingPage";
 import ConfirmedBookingPage from "./routes/ConfirmedBookingPage";
+import Header from "./components/Header";
+import About from "./components/About";
+import Specials from "./components/Specials";
+import Testimonials from "./components/Testimonials";
+import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -23,7 +28,10 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <HomePage /> },
+      {
+        index: true,
+        element: <HomePage />,
+      },
       {
         path: "/home",
         element: <HomePage />,

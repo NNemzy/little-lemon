@@ -9,6 +9,7 @@ input {
 input:invalid {
   outline-offset: 1px;
 }
+
 input[type="submit"] {
   padding: 10px 15px;
   background-color: black;
@@ -16,4 +17,7 @@ input[type="submit"] {
   cursor: pointer;
   color: white;
   border: none;
+}
+input[type="submit"]:disabled {
+  cursor: not-allowed;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 function OrderPage() {
-  return <h1>OrderPage</h1>;
+  return <h1>Order Page</h1>;
 }
 
 export default OrderPage;

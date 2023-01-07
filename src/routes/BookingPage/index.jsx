@@ -1,7 +1,6 @@
 import React, { useReducer, useState, useEffect } from "react";
 import BookingForm from "../../components/BookingForm";
 import { fetchAPI, submitAPI } from "./../../util/bookingApi/api";
-import { getRandomArbitraryTimes } from "./../../util/fun";
 import { useNavigate } from "react-router-dom";
 
 const initTimes = ["17:00", "18:00", "19:00"];
@@ -25,7 +24,7 @@ function BookingPage() {
     .split("/")
     .reverse()
     .join("-");
-
+  const [disableForm, setDisableForm] = useState(false);
   const [availableTimes, dispatch] = useReducer(reducer, initializeTimes());
 
   const [formValues, setFormValues] = useState({
@@ -52,8 +51,10 @@ function BookingPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setDisableForm(!disableForm);
     console.log("confirmed booking");
-    submitAPI() && navigate("/booking-confirmed");
+    // submitAPI() && navigate("/booking-confirmed");
+    resetForm();
   };
 
   function updateTimes(data) {
@@ -62,12 +63,16 @@ function BookingPage() {
   }
 
   return (
-    <BookingForm
-      availableTimes={availableTimes}
-      formValues={formValues}
-      handleInputChange={handleInputChange}
-      handleSubmit={handleSubmit}
-    />
+    <>
+      <h1>Booking Form</h1>
+      <BookingForm
+        availableTimes={availableTimes}
+        formValues={formValues}
+        disableForm={disableForm}
+        handleInputChange={handleInputChange}
+        handleSubmit={handleSubmit}
+      />
+    </>
   );
 }
 
