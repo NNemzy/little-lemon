@@ -3,18 +3,10 @@ import BookingForm from "../../components/BookingForm";
 import { fetchAPI, submitAPI } from "./../../util/bookingApi/api";
 import { useNavigate } from "react-router-dom";
 
-const initTimes = ["17:00", "18:00", "19:00"];
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "DATE_CHANGE":
-      return fetchAPI(new Date(action.payload));
-      break;
-  }
-}
+import { reducer, updateTimes } from "./../../util/reducers/bookingReducer";
 
 function initializeTimes() {
-  return initTimes;
+  return fetchAPI(new Date());
 }
 
 function BookingPage() {
@@ -24,6 +16,7 @@ function BookingPage() {
     .split("/")
     .reverse()
     .join("-");
+
   const [disableForm, setDisableForm] = useState(false);
   const [availableTimes, dispatch] = useReducer(reducer, initializeTimes());
 
@@ -34,9 +27,12 @@ function BookingPage() {
     occasion: "Birthday",
   });
 
-  useEffect(() => {
-    updateTimes(currentDate);
-  }, []);
+  function updateTimes(data) {
+    dispatch({ type: "DATE_CHANGE", payload: data });
+    return;
+  }
+
+  useEffect(() => {}, []);
 
   const handleInputChange = (name) => (event) => {
     let inputValue = event.target.value;
@@ -54,13 +50,7 @@ function BookingPage() {
     setDisableForm(!disableForm);
     console.log("confirmed booking");
     // submitAPI() && navigate("/booking-confirmed");
-    resetForm();
   };
-
-  function updateTimes(data) {
-    dispatch({ type: "DATE_CHANGE", payload: data });
-    return;
-  }
 
   return (
     <>
