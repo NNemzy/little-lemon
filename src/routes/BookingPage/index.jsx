@@ -2,6 +2,8 @@ import React, { useReducer, useState, useEffect } from "react";
 import BookingForm from "../../components/BookingForm";
 import { fetchAPI, submitAPI } from "./../../util/bookingApi/api";
 import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 import { reducer, updateTimes } from "./../../util/reducers/bookingReducer";
 
@@ -20,11 +22,20 @@ function BookingPage() {
   const [disableForm, setDisableForm] = useState(false);
   const [availableTimes, dispatch] = useReducer(reducer, initializeTimes());
 
-  const [formValues, setFormValues] = useState({
-    date: currentDate,
-    time: availableTimes,
-    guests: "1",
-    occasion: "Birthday",
+  const formik = useFormik({
+    initialValues: {
+      date: currentDate,
+      time: availableTimes,
+      guests: 1,
+      occasion: "Birthday",
+    },
+    validationSchema: Yup.object({
+      date: Yup.date().required(),
+      times: Yup.string().required("Please choose a time"),
+      guest: Yup.number().required().min("1", "Minimum number is 1"),
+      occasion: Yup.string().required(),
+    }),
+    onSubmit: handleSubmit,
   });
 
   function updateTimes(data) {
@@ -32,35 +43,19 @@ function BookingPage() {
     return;
   }
 
-  useEffect(() => {}, []);
-
-  const handleInputChange = (name) => (event) => {
-    let inputValue = event.target.value;
-    if (name === "date") {
-      updateTimes(inputValue);
-    }
-    setFormValues({
-      ...formValues,
-      [name]: inputValue,
-    });
-  };
-
-  const handleSubmit = (event) => {
+  function handleSubmit(event) {
+    console.log("confirmed booking");
     event.preventDefault();
     setDisableForm(!disableForm);
-    console.log("confirmed booking");
-    // submitAPI() && navigate("/booking-confirmed");
-  };
+  }
 
   return (
     <>
       <h1>Booking Form</h1>
       <BookingForm
         availableTimes={availableTimes}
-        formValues={formValues}
         disableForm={disableForm}
-        handleInputChange={handleInputChange}
-        handleSubmit={handleSubmit}
+        formik={formik}
       />
     </>
   );

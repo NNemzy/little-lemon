@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import styles from "./bookingForm-styles.module.css";
+import { Formik, useFormik } from "formik";
+import * as Yup from "yup";
 
 function BookingForm(props) {
-  const {
-    availableTimes,
-    formValues,
-    handleInputChange,
-    disableForm,
-    handleSubmit,
-  } = props;
-  const { date, time, guests, occasion } = formValues;
+  const { availableTimes, formik, disableForm } = props;
+  const { handleSubmit, getFieldProps, touched, errors } = formik;
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
@@ -17,53 +13,49 @@ function BookingForm(props) {
         <label htmlFor="res-date">Choose Date:</label>
         <input
           disabled={disableForm}
-          type="date"
           id="res-date"
-          min="2023-01-06"
-          max="2023-02-06"
-          required
-          value={date}
-          onChange={handleInputChange("date")}
+          type="date"
+          {...getFieldProps("date")}
         />
+        {touched.date && errors.date ? <div>{errors.date}</div> : null}
       </div>
       <div>
         <label htmlFor="res-time">Choose Time:</label>
-        <select
-          disabled={disableForm}
-          id="res-time"
-          value={time[0]}
-          onChange={handleInputChange("time")}
-        >
+        <select disabled={disableForm} id="res-time" {...getFieldProps("time")}>
           {availableTimes.map((time) => (
             <option key={time}>{time}</option>
           ))}
         </select>
+        {touched.time && errors.time ? <div>{errors.time}</div> : null}
       </div>
       <div>
         <label htmlFor="guest">Number of Guests: </label>
         <input
-          disabled={disableForm}
+          id="guest"
           type="number"
+          disabled={disableForm}
           placeholder="1"
           min="1"
           max="10"
-          id="guests"
-          value={guests}
-          onChange={handleInputChange("guests")}
+          {...getFieldProps("guest")}
         />
+        {touched.guest && errors.guest ? <div>{errors.guest}</div> : null}
       </div>
       <label htmlFor="occasion">Occasion: </label>
       <select
-        disabled={disableForm}
         id="occasion"
-        value={occasion}
-        onChange={handleInputChange("occasion")}
+        disabled={disableForm}
+        {...getFieldProps("occasion")}
       >
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
+      {touched.occasion && errors.occasion ? (
+        <div>{errors.occasion}</div>
+      ) : null}
       <div>
         <input
+          id="submit"
           style={disableForm ? { backgroundColor: "gray" } : null}
           disabled={disableForm}
           type="submit"
