@@ -21,44 +21,42 @@ import Specials from "./components/Specials";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 
-import SignupForm from "./formik/form";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <SignupForm />,
-    // errorElement: <ErrorPage />,
-    // children: [
-    //   {
-    //     index: true,
-    //     element: <HomePage />,
-    //   },
-    //   {
-    //     path: "/home",
-    //     element: <HomePage />,
-    //   },
-    //   {
-    //     path: "/about",
-    //     element: <AboutPage />,
-    //   },
-    //   {
-    //     path: "/menu",
-    //     element: <MenuPage />,
-    //   },
-    //   {
-    //     path: "/booking",
-    //     element: <BookingPage />,
-    //   },
-    //   {
-    //     path: "/order",
-    //     element: <OrderPage />,
-    //   },
-    //   {
-    //     path: "/booking-confirmed",
-    //     element: <ConfirmedBookingPage />,
-    //   },
-    // ],
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      {
+        path: "/menu",
+        element: <MenuPage />,
+      },
+      {
+        path: "/booking",
+        element: <BookingPage />,
+      },
+      {
+        path: "/order",
+        element: <OrderPage />,
+      },
+      {
+        path: "/booking-confirmed",
+        element: <ConfirmedBookingPage />,
+      },
+    ],
   },
 ]);
 
