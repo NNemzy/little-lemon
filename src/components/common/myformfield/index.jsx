@@ -1,4 +1,5 @@
 import React from "react";
+import { useField } from "formik";
 
 const MyFormField = ({
   label,
@@ -6,6 +7,7 @@ const MyFormField = ({
   options,
   as = "input",
   onChange,
+  disabled = false,
   ...props
 }) => {
   const [field, meta] = useField(props);
@@ -17,9 +19,12 @@ const MyFormField = ({
       <label htmlFor={props.id || props.name}>{label}</label>
       <Component
         type={type}
+        disabled={disabled}
         {...field}
         {...restMeta}
-        onChange={onChange ? (e) => onChange(e, field.onChange) : null}
+        onChange={
+          onChange ? (e) => onChange(e, field.onChange) : field.onChange
+        }
       >
         {as === "select" && props.children ? props.children : null}
       </Component>

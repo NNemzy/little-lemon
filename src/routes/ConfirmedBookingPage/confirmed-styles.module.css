@@ -1,0 +1,15 @@
+.container {
+  background-color: rgb(182, 234, 171);
+  max-width: 1300px;
+  max-height: 600px;
+  padding: 100px;
+  color: green;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading {
+  margin-top: 70px;
+}

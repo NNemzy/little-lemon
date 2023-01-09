@@ -1,68 +1,80 @@
 import React, { useState } from "react";
 import styles from "./bookingForm-styles.module.css";
-import { Formik, useFormik } from "formik";
-import * as Yup from "yup";
+import { Form, Formik } from "formik";
+import MyFormField from "./../../components/common/myformfield";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 function BookingForm(props) {
-  const { availableTimes, formik, disableForm } = props;
-  const { handleSubmit, getFieldProps, touched, errors } = formik;
+  const { availableTimes, formikValues, disableForm, updateTimes, submitting } =
+    props;
+  const { initialValues, validationSchema, handleSubmit } = formikValues;
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
-      <div>
-        <label htmlFor="res-date">Choose Date:</label>
-        <input
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      className={styles.form}
+      onSubmit={(values) => handleSubmit(values)}
+    >
+      <Form>
+        <MyFormField
           disabled={disableForm}
-          id="res-date"
+          type="text"
+          name="name"
+          label="Name:"
+        />
+        <MyFormField
+          disabled={disableForm}
+          type="email"
+          name="email"
+          label="Email:"
+        />
+        <MyFormField
+          disabled={disableForm}
           type="date"
-          {...getFieldProps("date")}
+          name="date"
+          label="Choose Date:"
+          onChange={updateTimes}
         />
-        {touched.date && errors.date ? <div>{errors.date}</div> : null}
-      </div>
-      <div>
-        <label htmlFor="res-time">Choose Time:</label>
-        <select disabled={disableForm} id="res-time" {...getFieldProps("time")}>
+        <MyFormField
+          disabled={disableForm}
+          as="select"
+          label="Choose Time:"
+          name="time"
+          type="text"
+        >
           {availableTimes.map((time) => (
-            <option key={time}>{time}</option>
+            <option key={time} value={time}>
+              {time}
+            </option>
           ))}
-        </select>
-        {touched.time && errors.time ? <div>{errors.time}</div> : null}
-      </div>
-      <div>
-        <label htmlFor="guest">Number of Guests: </label>
-        <input
-          id="guest"
+        </MyFormField>
+        <MyFormField
+          disabled={disableForm}
           type="number"
-          disabled={disableForm}
-          placeholder="1"
-          min="1"
-          max="10"
-          {...getFieldProps("guest")}
+          label="Number of guests:"
+          name="guests"
         />
-        {touched.guest && errors.guest ? <div>{errors.guest}</div> : null}
-      </div>
-      <label htmlFor="occasion">Occasion: </label>
-      <select
-        id="occasion"
-        disabled={disableForm}
-        {...getFieldProps("occasion")}
-      >
-        <option>Birthday</option>
-        <option>Anniversary</option>
-      </select>
-      {touched.occasion && errors.occasion ? (
-        <div>{errors.occasion}</div>
-      ) : null}
-      <div>
-        <input
-          id="submit"
-          style={disableForm ? { backgroundColor: "gray" } : null}
+        <MyFormField
           disabled={disableForm}
-          type="submit"
-          value="Make your reservation"
-        />
-      </div>
-    </form>
+          as="select"
+          label="Occasion:"
+          name="occasion"
+        >
+          <option value="birthday">Birthday</option>
+          <option value="anniversary">Anniversary</option>
+        </MyFormField>
+        <button disabled={disableForm} className="btn-submit" type="submit">
+          {submitting ? (
+            <FontAwesomeIcon icon={faCircleNotch} size="1x" spin={true} />
+          ) : (
+            <p>Submit</p>
+          )}
+        </button>
+      </Form>
+    </Formik>
   );
 }
 
