@@ -39,6 +39,7 @@ button {
 }
 button:hover {
   scale: 1.05;
+  color: var(--primary-yellow);
 }
 
 .btn-primary {

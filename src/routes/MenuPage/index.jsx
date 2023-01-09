@@ -1,9 +1,36 @@
 import React from "react";
-// import i1 from "./../../assets/images/i1.jpeg";
+import { NavLink } from "react-router-dom";
+
+import { menu } from "./const";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
+// Styles
+import styles from "./menu-styles.module.css";
 
 function MenuPage() {
-  console.log("images \n", images);
-  return <h1>Menu Page</h1>;
+  const { section, title, text, container, special } = styles;
+  return (
+    <section className={section}>
+      <div className={title}>
+        <h1>Menu Page</h1>
+      </div>
+      <div className={container}>
+        {menu.map(({ src, heading, p }) => (
+          <div className={special}>
+            <img src={src} />
+            <div className={text}>
+              <h3>{heading}</h3>
+              <p>{p}</p>
+              <NavLink to="/booking">Book</NavLink>
+              <FontAwesomeIcon icon={faChevronRight} size="1x" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default MenuPage;

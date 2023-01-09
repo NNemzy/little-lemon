@@ -18,7 +18,7 @@ function Header() {
             ever since the 1500s.
           </p>
           <button>
-            <NavLink to="/reservations">Reserve a Table</NavLink>
+            <NavLink to="/booking">Reserve a Table</NavLink>
           </button>
         </div>
         <div className={imageContainer}>
