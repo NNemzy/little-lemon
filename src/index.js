@@ -33,11 +33,7 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-<<<<<<< HEAD
         path: "/",
-=======
-        path: "/home",
->>>>>>> implement-formik
         element: <HomePage />,
       },
       {
