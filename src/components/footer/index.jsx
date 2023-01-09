@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./footer-styles.module.css";
-import img from "./../../assets/images/d1.jpeg";
+import logo from "./../../assets/logos/asset18.png";
 
 function Footer() {
   const { footer, container, imageContainer, navigation, contacts, socials } =
@@ -20,7 +20,7 @@ function Footer() {
     <footer className={footer}>
       <div className={container}>
         <div className={imageContainer}>
-          <img src={img} />
+          <img src={logo} className={styles.logo} />
         </div>
         <ul className={navigation}>
           <li>

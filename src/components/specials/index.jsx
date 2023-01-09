@@ -5,6 +5,9 @@ import img2 from "./../../../src/assets/images/d4.jpeg";
 
 import { NavLink } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
 function Specials() {
   const { title, container, special, text, section } = styles;
 
@@ -13,7 +16,7 @@ function Specials() {
       <div className={title}>
         <h1>Specials</h1>
         <button className="btn-primary">
-          <NavLink to="/order">Online order</NavLink>
+          <NavLink to="/booking">Online order</NavLink>
         </button>
       </div>
       <div className={container}>
@@ -27,6 +30,8 @@ function Specials() {
               veritatis optio aspernatur officia aliquid ipsam nulla earum?
               Recusandae quas sequi sint!
             </p>
+            <NavLink to="/booking">Book</NavLink>
+            <FontAwesomeIcon icon={faChevronRight} size="1x" />
           </div>
         </div>
         <div className={special}>
@@ -39,6 +44,8 @@ function Specials() {
               veritatis optio aspernatur officia aliquid ipsam nulla earum?
               Recusandae quas sequi sint!
             </p>
+            <NavLink to="/booking">Book</NavLink>
+            <FontAwesomeIcon icon={faChevronRight} size="1x" />
           </div>
         </div>
         <div className={special}>
@@ -51,6 +58,8 @@ function Specials() {
               veritatis optio aspernatur officia aliquid ipsam nulla earum?
               Recusandae quas sequi sint!
             </p>
+            <NavLink to="/booking">Book</NavLink>
+            <FontAwesomeIcon icon={faChevronRight} size="1x" />
           </div>
         </div>
       </div>

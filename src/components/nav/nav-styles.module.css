@@ -1,5 +1,6 @@
 .logo {
-  color: var(--bg-color);
+  /* color: var(--bg-color); */
+  height: 60px;
 }
 .list {
   display: flex;

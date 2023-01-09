@@ -1,11 +1,12 @@
 .section {
   padding: 100px 0;
+  background-color: var(--bg-color);
 }
 
 .container {
   width: 70%;
   margin: auto auto;
-  padding-top: 50px;
+  padding: 50px;
   display: flex;
   gap: 50px;
   justify-content: space-between;
@@ -22,14 +23,14 @@
 }
 .text h1 {
   font-size: 64px;
-  color: black;
+  color: var(--primary-yellow);
 }
 .text h2 {
-  color: black;
+  color: white;
 }
 .text p {
   margin-top: 50px;
-  color: black;
+  color: white;
 }
 .text button {
   background-color: black;

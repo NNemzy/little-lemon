@@ -2,15 +2,19 @@ import React from "react";
 import styles from "./nav-styles.module.css";
 import { NavLink } from "react-router-dom";
 
-function Nav() {
-  const navigationLinks = ["Home", "About", "Menu", "Booking", "Order"];
+import logo from "./../../assets/logos/asset16.png";
 
-  const { navigation, logo, list } = styles;
+function Nav() {
+  const navigationLinks = ["Home", "About", "Menu", "Booking"];
+
+  // const { navigation, logo, list } = styles;
 
   return (
-    <nav className={navigation}>
-      <a className={logo}>Little Lemon</a>
-      <ul className={list}>
+    <nav className={styles.navigation}>
+      <NavLink to="/">
+        <img src={logo} className={styles.logo} />
+      </NavLink>
+      <ul className={styles.list}>
         {navigationLinks.map((link) => (
           <li key={link.toLowerCase()}>
             <NavLink className={styles.link} to={link.toLocaleLowerCase()}>

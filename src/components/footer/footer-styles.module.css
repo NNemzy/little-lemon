@@ -1,6 +1,9 @@
 .footer {
-  background-color: var(--bg-color);
+  background-color: black;
   padding: 100px 0;
+}
+.logo {
+  height: 200px;
 }
 .container {
   margin: 0 auto;
@@ -9,8 +12,8 @@
   justify-content: space-between;
 }
 .imageContainer {
-  width: 200px;
-  height: 200px;
+  /* width: 200px; */
+  /* height: 200px; */
   overflow: hidden;
 }
 .imageContainer img {
@@ -21,8 +24,10 @@
 li {
   padding: 2px 0;
 }
-h3 {
-  color: white;
+.contacts li h3,
+.navigation li h3,
+.socials li h3 {
+  color: var(--primary-yellow);
 }
 a {
   color: white;
