@@ -73,6 +73,7 @@ function BookingForm(props) {
           </MyFormField>
         </div>
         <button
+          data-testid="submit"
           className={styles.formSubmit}
           type={submitting ? "button" : "submit"}
         >
@@ -84,7 +85,7 @@ function BookingForm(props) {
               spin={true}
             />
           ) : (
-            <p>Submit</p>
+            <>Submit</>
           )}
         </button>
       </Form>

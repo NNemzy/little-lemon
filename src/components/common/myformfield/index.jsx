@@ -25,6 +25,7 @@ const MyFormField = ({
         disabled={disabled}
         {...field}
         {...restMeta}
+        id={props.id || props.name}
         onChange={
           onChange ? (e) => onChange(e, field.onChange) : field.onChange
         }
@@ -32,7 +33,9 @@ const MyFormField = ({
         {as === "select" && props.children ? props.children : null}
       </Component>
       {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
+        <div className="error" data-testid={props.name}>
+          {meta.error}
+        </div>
       ) : null}
     </div>
   );

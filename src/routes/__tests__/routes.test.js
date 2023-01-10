@@ -19,17 +19,17 @@ describe("Main App ", () => {
   test("renders about page route successfully", () => {
     renderPage(<AboutPage />, "/about");
     const headings = screen.getAllByRole("heading");
-    expect(headings[0]).toHaveTextContent("About Page");
+    expect(headings[0]).toHaveTextContent("Little Lemon");
   });
   test("renders menu page route successfully", () => {
     renderPage(<MenuPage />, "/menu");
-    const heading = screen.getByRole("heading");
-    expect(heading).toHaveTextContent("Menu Page");
+    const heading = screen.getAllByRole("heading");
+    expect(heading[0]).toHaveTextContent("Menu Page");
   });
   test("renders booking page route successfully", () => {
     renderPage(<BookingPage />, "/booking");
     const heading = screen.getByRole("heading");
-    expect(heading).toHaveTextContent("Booking Form");
+    expect(heading).toHaveTextContent("Book a table");
   });
   test("renders order page route successfully", () => {
     renderPage(<OrderPage />, "/order");

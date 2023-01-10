@@ -1,6 +1,7 @@
 import * as React from "react";
 import "@testing-library/jest-dom";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
+import { act } from "react-dom/test-utils";
 
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { fetchAPI } from "./../../util/bookingApi/api";
@@ -14,7 +15,7 @@ describe("Booking Page", () => {
     renderPage(<BookingPage />, "/booking");
 
     const headings = screen.getAllByRole("heading");
-    expect(headings[0]).toHaveTextContent("Booking Form");
+    expect(headings[0]).toHaveTextContent("Book a table");
   });
 
   it("return the current date as default value", () => {
@@ -36,15 +37,15 @@ describe("Booking Page", () => {
     const defaultDate = screen.getByLabelText("Choose Date:");
     const times = screen.getByLabelText("Choose Time:").children;
 
-    const timeCopy = [...times];
+    const timesCopy = [...times];
 
-    fireEvent.change(defaultDate, { target: { value: "2023-01-23" } });
+    act(() => {
+      fireEvent.change(defaultDate, { target: { value: "2023-01-23" } });
+    });
 
     expect(currentDateTimes).not.toEqual(times);
     expect(times).not.toEqual(timesCopy);
   });
-
-  it("");
 });
 
 function renderPage(Component, path) {
