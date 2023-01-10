@@ -16,7 +16,8 @@
 .text p {
   margin-top: 10px;
   font-size: 0.9rem;
-  color: rgb(63, 63, 63);
+  font-weight: 400;
+  color: rgb(101, 101, 101);
 }
 .container {
   margin-top: 50px;
@@ -62,4 +63,15 @@
 }
 .special img:hover + div > svg {
   margin-left: 20px;
+}
+.book {
+  font-family: "Karla";
+  background-color: black;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
 }

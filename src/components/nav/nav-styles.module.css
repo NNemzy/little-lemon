@@ -26,3 +26,12 @@
   background-color: var(--bg-color);
   color: white;
 }
+
+@media (max-width: 800px) {
+  .logo {
+    height: 20px;
+  }
+  .link {
+    font-size: 14px;
+  }
+}

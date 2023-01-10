@@ -9,13 +9,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 function Specials() {
-  const { title, container, special, text, section } = styles;
+  const { title, container, special, text, section, book } = styles;
 
   return (
     <section className={section}>
       <div className={title}>
         <h1>Specials</h1>
-        <button className="btn-primary">
+        <button className={book}>
           <NavLink to="/booking">Online order</NavLink>
         </button>
       </div>

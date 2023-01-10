@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import img from "./d3.jpeg";
 
 function Header() {
-  const { header, container, text, imageContainer, image } = styles;
+  const { header, container, text, imageContainer, image, book } = styles;
 
   return (
     <header className={header}>
@@ -18,7 +18,9 @@ function Header() {
             ever since the 1500s.
           </p>
           <button>
-            <NavLink to="/booking">Reserve a Table</NavLink>
+            <NavLink to="/booking" className={book}>
+              Reserve a Table
+            </NavLink>
           </button>
         </div>
         <div className={imageContainer}>
