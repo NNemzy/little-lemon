@@ -19,56 +19,70 @@ function BookingForm(props) {
       onSubmit={(values) => handleSubmit(values)}
     >
       <Form>
-        <MyFormField
-          disabled={disableForm}
-          type="text"
-          name="name"
-          label="Name:"
-        />
-        <MyFormField
-          disabled={disableForm}
-          type="email"
-          name="email"
-          label="Email:"
-        />
-        <MyFormField
-          disabled={disableForm}
-          type="date"
-          name="date"
-          label="Choose Date:"
-          onChange={updateTimes}
-        />
-        <MyFormField
-          disabled={disableForm}
-          as="select"
-          label="Choose Time:"
-          name="time"
-          type="text"
+        <div style={{ display: "flex" }}>
+          <MyFormField
+            disabled={disableForm}
+            type="text"
+            name="name"
+            label="Name:"
+          />
+          <MyFormField
+            disabled={disableForm}
+            type="email"
+            name="email"
+            label="Email:"
+          />
+        </div>
+        <div style={{ display: "flex" }}>
+          <MyFormField
+            disabled={disableForm}
+            type="date"
+            label="Choose Date:"
+            name="date"
+            onChange={updateTimes}
+          />
+          <MyFormField
+            disabled={disableForm}
+            as="select"
+            label="Choose Time:"
+            name="time"
+            type="text"
+          >
+            {availableTimes.map((time) => (
+              <option key={time} value={time}>
+                {time}
+              </option>
+            ))}
+          </MyFormField>
+        </div>
+        <div>
+          <MyFormField
+            disabled={disableForm}
+            type="number"
+            label="Number of guests:"
+            name="guests"
+          />
+          <MyFormField
+            disabled={disableForm}
+            as="select"
+            label="Occasion:"
+            name="occasion"
+          >
+            <option value="birthday">Birthday</option>
+            <option value="anniversary">Anniversary</option>
+          </MyFormField>
+        </div>
+        <button
+          className={styles.formSubmit}
+          type={submitting ? "button" : "submit"}
         >
-          {availableTimes.map((time) => (
-            <option key={time} value={time}>
-              {time}
-            </option>
-          ))}
-        </MyFormField>
-        <MyFormField
-          disabled={disableForm}
-          type="number"
-          label="Number of guests:"
-          name="guests"
-        />
-        <MyFormField
-          disabled={disableForm}
-          as="select"
-          label="Occasion:"
-          name="occasion"
-        >
-          <option value="birthday">Birthday</option>
-          <option value="anniversary">Anniversary</option>
-        </MyFormField>
-        <button disabled={disableForm} className="btn-submit" type="submit">
           {submitting ? (
-            <FontAwesomeIcon icon={faCircleNotch} size="1x" spin={true} />
+            <FontAwesomeIcon
+              icon={faCircleNotch}
+              size="1x"
+              color="white"
+              spin={true}
+            />
           ) : (
             <p>Submit</p>
           )}

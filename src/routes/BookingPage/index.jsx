@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 import { reducer, updateTimes } from "./../../util/reducers/bookingReducer";
+import img2 from "./../../assets/images/i2.jpg";
 
 import styles from "./bookingpage.module.css";
 
@@ -69,18 +70,21 @@ function BookingPage() {
   return (
     <>
       <div className={styles.container}>
-        <h1 className={styles.heading}>Booking Form</h1>
-        <BookingForm
-          availableTimes={availableTimes}
-          formikValues={{
-            initialValues,
-            validationSchema,
-            handleSubmit,
-          }}
-          submitting={submitting}
-          updateTimes={updateTimes}
-          disableForm={disableForm}
-        />
+        <img src={img2} width={"100%"} height={"100%"} />
+        <div className={styles.form}>
+          <h1 className={styles.heading}>Book a table</h1>
+          <BookingForm
+            availableTimes={availableTimes}
+            formikValues={{
+              initialValues,
+              validationSchema,
+              handleSubmit,
+            }}
+            submitting={submitting}
+            updateTimes={updateTimes}
+            disableForm={disableForm}
+          />
+        </div>
       </div>
     </>
   );

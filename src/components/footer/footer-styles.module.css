@@ -1,6 +1,6 @@
 .footer {
   background-color: black;
-  padding: 100px 0;
+  padding: 80px 0;
 }
 .logo {
   height: 200px;
@@ -8,8 +8,15 @@
 .container {
   margin: 0 auto;
   max-width: 1000px;
+  padding: 30px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
   justify-content: space-between;
+  align-items: center;
+}
+.container ul {
+  flex-basis: 150px;
 }
 .imageContainer {
   /* width: 200px; */
@@ -35,10 +42,4 @@ a {
 }
 a:hover {
   color: var(--primary-yellow);
-}
-.navigation {
-}
-.contactLinks {
-}
-.socials {
 }

@@ -17,11 +17,13 @@ function MenuPage() {
         <h1>Menu Page</h1>
       </div>
       <div className={container}>
-        {menu.map(({ src, heading, p }) => (
+        {menu.map(({ src, heading, price, p }) => (
           <div className={special}>
             <img src={src} />
             <div className={text}>
-              <h3>{heading}</h3>
+              <h3>
+                {heading} <span className={styles.price}>${price}</span>
+              </h3>
               <p>{p}</p>
               <NavLink to="/booking">Book</NavLink>
               <FontAwesomeIcon icon={faChevronRight} size="1x" />

@@ -1,3 +1,7 @@
 .input:disabled {
   background-color: lightgray;
 }
+.error {
+  outline: 2px solid rgb(255, 149, 149);
+  outline-offset: 2px;
+}

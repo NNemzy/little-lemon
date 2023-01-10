@@ -38,8 +38,7 @@ button {
   transition: all 200ms ease;
 }
 button:hover {
-  scale: 1.05;
-  color: var(--primary-yellow);
+  background-color: rgb(96, 96, 96);
 }
 
 .btn-primary {
@@ -63,7 +62,7 @@ img {
 
 input {
   margin: 5px;
-  padding: 5px;
+  padding: 10px 20px;
   border-radius: 8px;
   background-color: rgb(241, 241, 241);
   border: none;
@@ -75,7 +74,7 @@ input[disabled] {
 
 select {
   margin: 5px;
-  padding: 5px;
+  padding: 10px 20px;
   border-radius: 8px;
   background-color: rgb(241, 241, 241);
   border: none;
@@ -86,17 +85,17 @@ select[disabled] {
   background-color: lightgray;
 }
 
-button[type="submit"] {
-  padding: 10px 15px;
+/* .btn-submit {
   margin-top: 20px;
   cursor: pointer;
   background-color: black;
   color: white;
   border: none;
   border-radius: 8px;
-}
+} */
+
 button[disabled] {
-  background-color: lightgray;
+  background-color: rgb(66, 66, 66);
   cursor: not-allowed;
 }
 input:-webkit-autofill,
@@ -189,12 +188,4 @@ input:-webkit-autofill:active {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.btn-submit {
-  width: 40px;
-  height: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

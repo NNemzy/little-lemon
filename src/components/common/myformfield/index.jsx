@@ -1,6 +1,8 @@
 import React from "react";
 import { useField } from "formik";
 
+import styles from "./index.module.css";
+
 const MyFormField = ({
   label,
   type,
@@ -18,6 +20,7 @@ const MyFormField = ({
     <div>
       <label htmlFor={props.id || props.name}>{label}</label>
       <Component
+        className={meta.touched && meta.error ? styles.error : null}
         type={type}
         disabled={disabled}
         {...field}

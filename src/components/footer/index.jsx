@@ -2,17 +2,12 @@ import React from "react";
 import styles from "./footer-styles.module.css";
 import logo from "./../../assets/logos/asset18.png";
 
+import { NavLink } from "react-router-dom";
+
 function Footer() {
   const { footer, container, imageContainer, navigation, contacts, socials } =
     styles;
-  const navigationLinks = [
-    "Home",
-    "About",
-    "Menu",
-    "Reservations",
-    "Order Online",
-    "Log In",
-  ];
+  const navigationLinks = ["About", "Menu", "Booking"];
   const contactLinks = ["Address", "Phone Number", "Email"];
   const socialLinks = ["Address", "Phone Number", "Email"];
 
@@ -26,9 +21,12 @@ function Footer() {
           <li>
             <h3>Navigation Links</h3>
           </li>
+          <li>
+            <NavLink to={"/"}>Home</NavLink>
+          </li>
           {navigationLinks.map((item) => (
             <li key={item.toLowerCase()}>
-              <a href="#">{item}</a>
+              <NavLink to={item.toLocaleLowerCase()}>{item}</NavLink>
             </li>
           ))}
         </ul>
@@ -38,7 +36,7 @@ function Footer() {
           </li>
           {contactLinks.map((item) => (
             <li key={item.toLowerCase()}>
-              <a href="#">{item}</a>
+              <a>{item}</a>
             </li>
           ))}
         </ul>
@@ -48,7 +46,7 @@ function Footer() {
           </li>
           {socialLinks.map((item) => (
             <li key={item.toLowerCase()}>
-              <a href="#">{item}</a>
+              <a>{item}</a>
             </li>
           ))}
         </ul>

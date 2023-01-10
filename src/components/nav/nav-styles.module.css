@@ -1,6 +1,6 @@
 .logo {
   /* color: var(--bg-color); */
-  height: 60px;
+  height: 50px;
 }
 .list {
   display: flex;
@@ -10,9 +10,10 @@
   display: flex;
   max-width: 85%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid var(--bg-color);
 }
 
 .link {

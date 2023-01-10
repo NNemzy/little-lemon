@@ -10,6 +10,7 @@ export const menu = [
   {
     src: img1,
     heading: "Greek Salad",
+    price: "12",
     p: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
     magni pariatur ipsum. Libero corrupti dicta, expedita odio vel
     veritatis optio aspernatur officia aliquid ipsam nulla earum?
@@ -18,6 +19,7 @@ export const menu = [
   {
     src: img2,
     heading: "Greek Salad",
+    price: "15",
     p: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
     magni pariatur ipsum. Libero corrupti dicta, expedita odio vel
     veritatis optio aspernatur officia aliquid ipsam nulla earum?
@@ -26,6 +28,7 @@ export const menu = [
   {
     src: img3,
     heading: "Greek Salad",
+    price: "15",
     p: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
     magni pariatur ipsum. Libero corrupti dicta, expedita odio vel
     veritatis optio aspernatur officia aliquid ipsam nulla earum?
@@ -34,6 +37,7 @@ export const menu = [
   {
     src: img4,
     heading: "Greek Salad",
+    price: "15",
     p: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
     magni pariatur ipsum. Libero corrupti dicta, expedita odio vel
     veritatis optio aspernatur officia aliquid ipsam nulla earum?
@@ -42,6 +46,7 @@ export const menu = [
   {
     src: img5,
     heading: "Greek Salad",
+    price: "15",
     p: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
     magni pariatur ipsum. Libero corrupti dicta, expedita odio vel
     veritatis optio aspernatur officia aliquid ipsam nulla earum?
@@ -50,6 +55,7 @@ export const menu = [
   {
     src: img6,
     heading: "Greek Salad",
+    price: "15",
     p: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
     magni pariatur ipsum. Libero corrupti dicta, expedita odio vel
     veritatis optio aspernatur officia aliquid ipsam nulla earum?

@@ -1,3 +1,14 @@
 .form div {
   padding: 5px 0;
 }
+
+.form {
+  background-color: white;
+}
+.formSubmit {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: black;
+  border: none;
+  color: white;
+}
