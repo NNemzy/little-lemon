@@ -21,7 +21,7 @@ function Specials() {
       </div>
       <div className={container}>
         <div className={special}>
-          <img src={img1} />
+          <img src={img1} alt="greek salad" />
           <div className={text}>
             <h3>Greek Salad</h3>
             <p>
@@ -35,7 +35,7 @@ function Specials() {
           </div>
         </div>
         <div className={special}>
-          <img src={img2} />
+          <img src={img2} alt="greek salad" />
           <div className={text}>
             <h3>Greek Salad</h3>
             <p>
@@ -49,7 +49,7 @@ function Specials() {
           </div>
         </div>
         <div className={special}>
-          <img src={img1} />
+          <img src={img1} alt="greek salad" />
           <div className={text}>
             <h3>Greek Salad</h3>
             <p>

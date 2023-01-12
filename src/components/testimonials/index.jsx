@@ -7,7 +7,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { test } from "./const";
 
 function Testimonials() {
-  const { section, testimonials, testimonial, image, text, container } = styles;
+  const { section, testimonials, testimonial, container } = styles;
 
   return (
     <section className={section}>
@@ -29,35 +29,11 @@ function Testimonials() {
                 </span>
               </h2>
               <div>
-                <img src={person.src} />
+                <img src={person.src} alt="avatar" />
               </div>
               <p>{person.text}</p>
             </div>
           ))}
-          {/* <div className={testimonial}>
-            <h2>Rating</h2>
-            <div>
-              <img src={img1} />
-            </div>
-          </div>
-          <div className={testimonial}>
-            <h2>Rating</h2>
-            <div>
-              <img src={img1} />
-            </div>
-          </div>
-          <div className={testimonial}>
-            <h2>Rating</h2>
-            <div>
-              <img src={img1} />
-            </div>
-          </div>
-          <div className={testimonial}>
-            <h2>Rating</h2>
-            <div>
-              <img src={img1} />
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

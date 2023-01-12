@@ -23,7 +23,7 @@ function About() {
           </p>
         </div>
         <div className={imageContainer}>
-          <img className={image} src={img} />
+          <img className={image} src={img} alt="dish" />
         </div>
       </div>
     </section>

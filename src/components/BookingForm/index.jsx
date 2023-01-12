@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./bookingForm-styles.module.css";
 import { Form, Formik } from "formik";
-import MyFormField from "./../../components/common/myformfield";
+import MyFormField from "../common/myformfield";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";

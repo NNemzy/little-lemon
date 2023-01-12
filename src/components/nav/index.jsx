@@ -12,7 +12,7 @@ function Nav() {
   return (
     <nav className={styles.navigation}>
       <NavLink to="/">
-        <img src={logo} className={styles.logo} />
+        <img src={logo} alt="logo" className={styles.logo} />
       </NavLink>
       <ul className={styles.list}>
         <li key={"home"}>

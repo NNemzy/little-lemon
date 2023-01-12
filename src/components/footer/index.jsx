@@ -15,7 +15,7 @@ function Footer() {
     <footer className={footer}>
       <div className={container}>
         <div className={imageContainer}>
-          <img src={logo} className={styles.logo} />
+          <img src={logo} alt="logo" className={styles.logo} />
         </div>
         <ul className={navigation}>
           <li>
@@ -36,7 +36,7 @@ function Footer() {
           </li>
           {contactLinks.map((item) => (
             <li key={item.toLowerCase()}>
-              <a>{item}</a>
+              <a href="*">{item}</a>
             </li>
           ))}
         </ul>
@@ -46,7 +46,7 @@ function Footer() {
           </li>
           {socialLinks.map((item) => (
             <li key={item.toLowerCase()}>
-              <a>{item}</a>
+              <a href="*">{item}</a>
             </li>
           ))}
         </ul>
