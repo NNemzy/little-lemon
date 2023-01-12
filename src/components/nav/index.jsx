@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import logo from "./../../assets/logos/asset16.png";
 
 function Nav() {
-  const navigationLinks = ["About", "Menu", "Booking"];
+  const mainNavigationLinks = ["About", "Menu", "Reservations"];
 
   // const { navigation, logo, list } = styles;
 
@@ -20,13 +20,23 @@ function Nav() {
             Home
           </NavLink>
         </li>
-        {navigationLinks.map((link) => (
+        {mainNavigationLinks.map((link) => (
           <li key={link.toLowerCase()}>
             <NavLink className={styles.link} to={link.toLocaleLowerCase()}>
               {link}
             </NavLink>
           </li>
         ))}
+        <li>
+          <NavLink className={styles.link} to={"/booking"}>
+            Reservations
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className={styles.link} to={"/login"}>
+            Login
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

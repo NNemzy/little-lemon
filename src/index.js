@@ -12,6 +12,7 @@ import MenuPage from "./routes/MenuPage";
 import OrderPage from "./routes/OrderPage";
 import BookingPage from "./routes/BookingPage";
 import ConfirmedBookingPage from "./routes/ConfirmedBookingPage";
+import LoginPage from "./routes/LogInPage/index.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
         element: <MenuPage />,
       },
       {
-        path: "/booking",
+        path: "/reservations",
         element: <BookingPage />,
       },
       {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/booking-confirmed",
         element: <ConfirmedBookingPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
       },
     ],
   },
