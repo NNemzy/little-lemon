@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import logo from "./../../assets/logos/asset16.png";
 
 function Nav() {
-  const mainNavigationLinks = ["About", "Menu", "Reservations"];
+  const mainNavigationLinks = ["About", "Menu"];
 
   // const { navigation, logo, list } = styles;
 
@@ -28,7 +28,7 @@ function Nav() {
           </li>
         ))}
         <li>
-          <NavLink className={styles.link} to={"/booking"}>
+          <NavLink className={styles.link} to={"/reservations"}>
             Reservations
           </NavLink>
         </li>

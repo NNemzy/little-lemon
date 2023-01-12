@@ -72,7 +72,7 @@ function BookingPage() {
       <div className={styles.container}>
         <img src={img2} width={"100%"} alt="dish" height={"100%"} />
         <div className={styles.form}>
-          <h1 className={styles.heading}>Book a table</h1>
+          <h1 className={styles.heading}>Reserve a table</h1>
           <BookingForm
             availableTimes={availableTimes}
             formikValues={{
