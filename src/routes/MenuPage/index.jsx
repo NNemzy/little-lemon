@@ -19,7 +19,7 @@ function MenuPage() {
       <div className={container}>
         {menu.map(({ src, heading, price, p }) => (
           <div className={special} key={src}>
-            <img src={src} />
+            <img src={src} alt={heading} />
             <div className={text}>
               <h3>
                 {heading} <span className={styles.price}>${price}</span>
