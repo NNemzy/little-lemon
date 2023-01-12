@@ -24,7 +24,7 @@ function Header() {
           </button>
         </div>
         <div className={imageContainer}>
-          <img className={image} src={img} />
+          <img className={image} alt="dish" src={img} />
         </div>
       </div>
     </header>

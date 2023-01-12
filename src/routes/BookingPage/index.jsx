@@ -1,10 +1,10 @@
-import React, { useReducer, useState, useEffect } from "react";
+import React, { useReducer, useState } from "react";
 import BookingForm from "../../components/BookingForm";
-import { fetchAPI, submitAPI } from "./../../util/bookingApi/api";
+import { fetchAPI } from "./../../util/bookingApi/api";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
-import { reducer, updateTimes } from "./../../util/reducers/bookingReducer";
+import { reducer } from "./../../util/reducers/bookingReducer";
 import img2 from "./../../assets/images/i2.jpg";
 
 import styles from "./bookingpage.module.css";
@@ -70,7 +70,7 @@ function BookingPage() {
   return (
     <>
       <div className={styles.container}>
-        <img src={img2} width={"100%"} height={"100%"} />
+        <img src={img2} width={"100%"} alt="dish" height={"100%"} />
         <div className={styles.form}>
           <h1 className={styles.heading}>Book a table</h1>
           <BookingForm
