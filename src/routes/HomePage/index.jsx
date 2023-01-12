@@ -1,11 +1,11 @@
 import React from "react";
 
 // Components
-import Header from "../../components/header";
-import Specials from "../../components/specials";
-import Testimonials from "../../components/testimonials";
-import About from "../../components/about";
-import Footer from "../../components/footer";
+import Header from "../../components/Header/index.jsx";
+import Specials from "../../components/specials/index.jsx";
+import Testimonials from "../../components/testimonials.jsx";
+import About from "../../components/about.jsx";
+import Footer from "../../components/footer.jsx";
 
 function HomePage(props) {
   return (
